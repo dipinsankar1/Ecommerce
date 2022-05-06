@@ -15,13 +15,15 @@ class _ProductScreenState extends State<ProductScreen> {
   void initState() {
     super.initState();
     Provider.of<ProductListViewModel>(context, listen: false).fetchEvents();
-//you can use anything you like or not use anything here. I call it just to have a content on the screen rather than having a blank screen
   }
 
   @override
   Widget build(BuildContext context) {
     final vm = Provider.of<ProductListViewModel>(context);
     return Scaffold(
+      appBar: AppBar(
+        title: Center(child: const Text('Products')),
+      ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
